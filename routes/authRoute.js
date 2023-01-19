@@ -1,5 +1,6 @@
 const {Router} = require("express")
-const {signup} = require("../controllers/authController")
+const {signup, login} = require("../controllers/authController")
 
 
-exports.authRouter = Router().post("/users", signup)
+
+exports.authRouter = Router().post("/signup", signup).get("/login", login)

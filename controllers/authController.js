@@ -16,7 +16,7 @@ exports.signup = async (req, res) => {
       password: encryptedPassword,
       email,
     });
-    const user = await user.save();
+    const user = await userDocument.save();
     res.send(user);
   } catch (error) {
     res.send(error);

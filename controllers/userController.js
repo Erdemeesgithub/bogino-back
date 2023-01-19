@@ -1,13 +1,14 @@
 const { User } = require("../models/userModel");
 
 exports.getUsers = async (req, res) => {
-    try {
-        const users = await User.find({})
-        res.send(users)
-    } catch (error) {
-        res.send(error)
-    }
-  
+  try {
+    const users = await User.find({}, 
+      { password: 0 }
+      );
+    res.send(users);
+  } catch (error) {
+    res.send(error);
+  }
 };
 
 exports.createUser = async (req, res) => {
@@ -16,10 +17,10 @@ exports.createUser = async (req, res) => {
   if (!username || !password || !email)
     return res.send("username, password and email is required");
   try {
-    const userDocument = new User({username, password, email})
-    const user = await user.save()
-    res.send(user)
+    const userDocument = new User({ username, password, email });
+    const user = await user.save();
+    res.send(user);
   } catch (error) {
-    res.send(error)
+    res.send(error);
   }
 };
