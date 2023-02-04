@@ -1,11 +1,12 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, SchemaType } = require("mongoose");
 
 const urlSchema = new Schema({
+  urlCode: String,
   longUrl: String,
   shortUrl: String,
-  createdAt: { default: Date.now(), type: Date },
-});
-
-const Url = model("Url", urlSchema);
+  user: String,
+  createdAt: { type: String, default: Date.now }
+})
+const Url = model("Url", urlSchema)
 
 exports.Url = Url
