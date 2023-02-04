@@ -12,7 +12,7 @@ exports.createUrl = async (req, res) => {
     let shortUrl = baseUrl + "/url/" + urlCode
 
     url = new Url({
-      user:req.body.user,
+      username:req.body.user,
       urlCode:urlCode,
       longUrl:longUrl,
       shortUrl,
