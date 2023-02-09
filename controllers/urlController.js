@@ -29,12 +29,13 @@ exports.createUrl = async (req, res) => {
 }
 
 exports.getUrls = async (req, res) => {
-  const page = req.query.page - 1
-  const userId = req.query.userId
-  if (userId) {
-    const result = await Url.find({user: userId}).limit(5).skip(page * 5)
+  // const page = req.query.page - 1
+  // const userId = req.query.userId
+  // if (userId) {
+    const result = await Url.find()
+    // .limit(5).skip(page * 5)
     return res.send(result)
-  } 
+  // }
   res.sendStatus(404)
 }
 exports.getUrl = async (req, res) => {
