@@ -12,11 +12,11 @@ exports.createUrl = async (req, res) => {
     let shortUrl = baseUrl + "/url/" + urlCode
 
     url = new Url({
-      username:req.body.user,
       urlCode:urlCode,
       longUrl:longUrl,
-      shortUrl,
-      createdAt: new Date()
+      shortUrl, 
+      userId: req.query.uid,
+      createdAt: new Date(),
     })
 
     await url.save()
