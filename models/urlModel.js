@@ -5,7 +5,8 @@ const urlSchema = new Schema({
   longUrl: String,
   shortUrl: String,
   createdAt: { type: String, default: Date.now },
-  createdBy: String
+  createdBy: String,
+
 })
 const Url = model("Url", urlSchema)
 
