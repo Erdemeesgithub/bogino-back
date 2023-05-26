@@ -24,3 +24,14 @@ exports.createUser = async (req, res) => {
     res.send(error);
   }
 };
+
+// exports.toggleTask = async (req, res) => {
+//   try {
+//     const result = await Task.findById(req.params.id);
+//     result.isDone = !result.isDone;
+//     await result.save();
+//     res.send(result);
+//   } catch (err) {
+//     res.send("err");
+//   }
+// };
